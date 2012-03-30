@@ -1,0 +1,46 @@
+<?php
+
+function ajax_reader_init() {
+  drupal_add_js('misc/jquery.form.js');
+  drupal_add_library('system', 'drupal.ajax');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function ajax_reader_menu() {
+  // A menu callback is required when using ajax outside of the Form API.
+  $items['ajax-reader'] = array(
+    'page callback' => 'ajax_link_response',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function ajax_link_response($type = 'ajax', $nid = 0) {
+  $output = _ajax_reader_load_noder($nid);
+  if ($type == 'ajax') {
+    $commands = array();
+    $commands[] = ajax_command_replace('#content', '<div id="content">' . $output . '</div>');
+    $page = array(
+      '#type' => 'ajax',
+      '#commands' => $commands
+    );
+    ajax_deliver($page);
+  }
+  else {
+    $output = '<div id="content">' . $output . '</div>';
+    return $output;
+  }
+}
+
+function _ajax_reader_load_noder($nid = 0) {
+  $node = node_load($nid, NULL, false);
+  if ($node) {
+    $vnode = node_view($node);
+    return theme("node", $vnode);
+  }
+ // return views_embed_view ('front','page_1', $nid);
+}

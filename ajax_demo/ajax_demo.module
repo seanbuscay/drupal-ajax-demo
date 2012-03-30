@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ajax-demo feature.
+ */
+
+include_once('ajax_demo.features.inc');
