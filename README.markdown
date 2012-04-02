@@ -172,7 +172,7 @@ That's the end of the screencast. I hope it was helpful. Thank you for watching.
 
 ## CREDITS
 
-It was Katherine Bailey (katbailey)in this presentation  http://chicago2011.drupal.org/sessions/drupal-7-javascript-developers that really helped me get a handle on the steps to using Non-form based Ajax in D7.
+It was Katherine Bailey (katbailey) in this presentation  http://chicago2011.drupal.org/sessions/drupal-7-javascript-developers that really helped me get a handle on the steps to using Non-form based Ajax in D7.
 
 Here's a link to the slides.  Kat co-presented with Randy Fay.  It's her parts of the presentation that I refered to for this code.
 
