@@ -165,7 +165,7 @@ Drupal 7s Ajax-framework for non-form based content updates.
 
 1. write a menu callback 
 2. return Ajax formatted content in a page callback function 
-3. format the links (add "no-js" & "user-ajax" to the links that point to the menu callback 
+3. format the links (add "no-js" & "use-ajax" to the links that point to the menu callback 
 4. make sure the "jquery.form.js" and the "drupal.ajax" libraries are loaded in the page
 
 That's the end of the screencast. I hope it was helpful. Thank you for watching.  
