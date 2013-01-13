@@ -30,6 +30,9 @@ function ajax_link_response($type = 'ajax', $nid = 0) {
     );
     ajax_deliver($page);
   }
+  elseif ($nid > 0) {
+    drupal_goto('node/' . $nid);
+  }
   else {
     $output = '<div id="content">' . $output . '</div>';
     return $output;
